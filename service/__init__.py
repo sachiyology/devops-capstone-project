@@ -8,6 +8,8 @@ import sys
 from flask import Flask
 from service import config
 from service.common import log_handlers
+from flask_talisman import Talisman
+
 
 def create_app():
 # Create Flask application
@@ -16,7 +18,6 @@ app.config.from_object(config)
 
 # Security Headers
 Talisman(app)
-
 return app
 
 # Import the routes After the Flask app is created
