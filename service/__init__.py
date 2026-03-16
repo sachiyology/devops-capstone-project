@@ -9,6 +9,7 @@ from flask import Flask
 from service import config
 from service.common import log_handlers
 from flask_talisman import Talisman
+from flask_cors import CORS
 
 
 def create_app():
@@ -18,6 +19,8 @@ app.config.from_object(config)
 
 # Security Headers
 Talisman(app)
+cors = CORS(app)
+
 return app
 
 # Import the routes After the Flask app is created
