@@ -26,3 +26,5 @@ jobs:
 
       - name: Run tests
         run: nosetests
+        env:
+          DATABASE_URI: sqlite:///test.db
